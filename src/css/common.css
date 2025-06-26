@@ -197,3 +197,32 @@ body {
 .hidden {
   display: none;
 } */
+
+#task-list li {
+  margin: 5px 0;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#task-list button {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#task-list button:hover {
+  color: red;
+}
+
+/* body.dark-theme {
+  background-color: black;
+  color: white;
+} */
+
+body {
+  transition: background-color 0.5s ease;
+}

@@ -719,3 +719,282 @@
 //     alert(`Ти обрав: ${color}`);
 //   });
 // });
+
+/*========================================================================= */
+
+// const buttons = document.querySelectorAll('.color-btn');
+
+// //проходимось по кожній кнопці
+// buttons.forEach(button => {
+//   //На кожну кнопку ми "вішаємо" слухача події click.
+//   button.addEventListener('click', () => {
+//     //Коли будь-яка кнопка клікнута: Проходимося по всіх кнопках, І знімаємо з усіх клас active. Це обов'язковий крок, щоб одна була активна, а не кілька.
+//     buttons.forEach(btn => btn.classList.remove('active'));
+//     //Після того, як з усіх зняли active,— ми додаємо його лише до натиснутої кнопки
+//     button.classList.add('active');
+//   });
+// });
+
+/*============================================================================= */
+
+// ?блок, який змінює фон при наведенні мишки (mouseover) і повертає назад при відведенні (mouseout).
+
+// const hoverBox = document.querySelector('#hover-box');
+// hoverBox.addEventListener('mouseover', () => {
+//   hoverBox.style.backgroundColor = 'orange';
+
+//   hoverBox.addEventListener('mouseout', () => {
+//     hoverBox.style.backgroundColor = 'green';
+//   });
+// });
+
+/*========================================================================= */
+
+// const input = document.querySelector('#name-input');
+// const output = document.querySelector('#name-output');
+
+// input.addEventListener('input', () => {
+//   //беремо значення інпут і обрізаємо пробіли
+//   const span = input.value.trim();
+//   //а далі перевіряємо чи імя чи анонім
+//   output.textContent = span || 'Anonymous';
+// });
+
+/*======================================================================== */
+
+// const btn = document.querySelector('#change-bg');
+// const body = document.body;
+
+// function getRandomColor() {
+//   const r = Math.floor(Math.random() * 256);
+//   const g = Math.floor(Math.random() * 256);
+//   const b = Math.floor(Math.random() * 256);
+//   return `rgb(${r}, ${g}, ${b})`;
+// }
+
+// btn.addEventListener('click', () => {
+//   const newColor = getRandomColor();
+//   body.style.backgroundColor = newColor;
+// });
+
+/*============================================================================ */
+
+// const decrement = document.querySelector('#decrement');
+// const counter = document.querySelector('#counter');
+// const increment = document.querySelector('#increment');
+
+// let count = 0;
+
+// function updateCounter() {
+//   counter.textContent = count;
+// }
+
+// increment.addEventListener('click', () => {
+//   count++;
+//   updateCounter();
+// });
+
+// decrement.addEventListener('click', () => {
+//   if (count > 0) {
+//     count--;
+//     updateCounter();
+//   }
+// });
+
+// increment.addEventListener('click', () => {
+//   count += 1;
+//   counter.textContent = `${count}`;
+// });
+
+// decrement.addEventListener('click', () => {
+//   if (count > 0) {
+//     count -= 1;
+//     counter.textContent = `${count}`;
+//   }
+// });
+
+/*===================================================================== */
+
+//подія keydown спрацьовує тільки тоді, коли щось активне в DOM має фокус, типу <input> або window.
+
+// const span = document.querySelector('#key-output');
+
+// window.addEventListener('keydown', event => {
+//   span.textContent = event.key;
+// });
+
+/*===================================================================== */
+
+// const input = document.querySelector('#validation-input');
+
+// input.addEventListener('blur', () => {
+//   const requiredLength = Number(input.dataset.length); //dataset.length — це рядок, а value.length — число → треба привести до числа
+//   const actualLength = input.value.trim().length; //перевіряємо шо вводить користувач
+
+//   input.classList.remove('valid', 'invalid');
+
+//   if (actualLength === requiredLength) {
+//     input.classList.add('valid');
+//   } else {
+//     input.classList.add('invalid');
+//   }
+// });
+
+/*===================================================================== */
+
+// const input = document.querySelector('#item-input');
+// const btn = document.querySelector('#add-item');
+// const list = document.querySelector('#list');
+
+// btn.addEventListener('click', () => {
+//   const value = input.value.trim();
+
+//   if (value === '') return; // нічого не додаємо, якщо порожнє
+
+//   const li = document.createElement('li');
+//   li.textContent = value;
+//   list.append(li);
+//   input.value = '';
+//   input.focus();
+// });
+
+/*=============================================================== */
+// Знаходимо повзунок
+// const rangeInput = document.querySelector('#font-size-control');
+
+// // Знаходимо текст, який буде змінювати розмір
+// const text = document.querySelector('#text');
+
+// // Слухаємо подію 'input' — коли рухається повзунок
+// rangeInput.addEventListener('input', () => {
+//   const size = rangeInput.value; // Беремо поточне значення повзунка
+//   text.style.fontSize = `${size}px`; // Застосовуємо це значення до розміру шрифту
+// });
+
+/*===================================================================== */
+
+// const taskInput = document.querySelector('#task-input');
+// const addBtn = document.querySelector('#add-task');
+// const taskList = document.querySelector('#task-list');
+
+// addBtn.addEventListener('click', () => {
+//   const value = taskInput.value.trim();
+//   if (value === '') return;
+
+//   const task = document.createElement('li');
+//   task.textContent = value;
+
+//   taskInput.value = '';
+
+//   const deleteBtn = document.createElement('button');
+//   deleteBtn.textContent = '❌';
+//   task.append(deleteBtn);
+//   deleteBtn.addEventListener('click', () => {
+//     task.remove();
+//   });
+//   taskList.append(task);
+// });
+
+/*==================================================================== */
+// const themeBtn = document.querySelector('#toggle-theme');
+// const body = document.body;
+// themeBtn.addEventListener('click', () => {
+//   const isDark = body.classList.toggle('dark-theme');
+//   if (isDark) {
+//     themeBtn.textContent = 'Світла тема 🌞';
+//   } else {
+//     themeBtn.textContent = 'Темна тема 🌙';
+//   }
+// });
+
+/*====================================================================== */
+// const num1 = document.querySelector('#num1');
+// const num2 = document.querySelector('#num2');
+// const operation = document.querySelector('#operation');
+// const btn = document.querySelector('#calculate');
+// const result = document.querySelector('#result');
+
+// btn.addEventListener('click', () => {
+// ? Зчитуємо значення з input'ів і приводимо до числа:
+// ?➡️ Важливо: input.value — завжди текст.Тому треба зробити з нього число — через parseFloat().
+//   const n1 = parseFloat(num1.value);
+//   const n2 = parseFloat(num2.value);
+//   let calcResult;
+
+//? зчитуємо обрану операцію
+// ?operation.value дає нам значення з <select>, наприклад: '+' або '*'.
+//   switch (operation.value) {
+//     case '+':
+//       calcResult = n1 + n2;
+//       break;
+//     case '-':
+//       calcResult = n1 - n2;
+//       break;
+//     case '*':
+//       calcResult = n1 * n2;
+//       break;
+//     case '/':
+// ?Щоб уникнути ділення на нуль
+//       calcResult = n2 !== 0 ? n1 / n2 : 'Ділення на нуль!';
+//       break;
+//     default:
+//       calcResult = 'Невідома операція';
+//   }
+//   result.textContent = `${calcResult}`;
+// });
+
+/*=================================================================== */
+
+// const btnMinus = document.querySelector('#minus');
+// const btnPlus = document.querySelector('#plus');
+// const valueSpan = document.querySelector('#value');
+// let count = 5; //?нам треба десь зберігати це число, щоб змінювати його після кожного кліку.
+
+//?Функція, яка оновлює інтерфейс після кожної зміни
+// function updateUI() {
+//   valueSpan.textContent = count; // ?оновлюємо число на екрані
+//   btnMinus.disabled = count <= 0; // ?Якщо count <= 0 — вимикаємо кнопку мінус
+//   btnPlus.disabled = count >= 10; // ?Якщо count >= 10 — вимикаємо кнопку плюс
+// }
+
+// btnMinus.addEventListener('click', () => {
+//   if (count > 0) {
+//     count--; // ?зменшуємо значення
+//     updateUI(); // ?оновлюємо інтерфейс
+//   }
+// });
+// btnPlus.addEventListener('click', () => {
+//   if (count < 10) {
+//     count++; // ?збільшуємо значення
+//     updateUI(); // ?оновлюємо інтерфейс
+//   }
+// });
+// ?Викликаємо оновлення одразу при запуску, щоб все було правильно
+// updateUI();
+
+/*=============================================================== */
+
+// const getFactBtn = document.querySelector('#get-fact');
+// const p = document.querySelector('#fact');
+
+// const facts = [
+//   'Космос пахне паленим стейком',
+//   'Восьминоги мають три серця',
+//   'Лінивець може проспати 20 годин на добу',
+//   'Піца - офіційно визнана овочем у США (сумно, але факт)',
+//   'Бджоли можуть впізнавати обличчя людей',
+// ];
+
+// getFactBtn.addEventListener('click', () => {
+
+//?Генеруємо випадкове число від 0 до довжини масиву - 1
+//     const index = Math.floor(Math.random() * facts.length);
+
+// ?Вибираємо факт за цим індексом
+//     const randomFact = facts[index];
+
+// ?Виводимо факт у <p>
+//   p.textContent = randomFact;
+// });
+
+/*=================================================================== */
